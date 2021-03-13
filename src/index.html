@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmoteka</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://i.pinimg.com/favicons/9d36b1a181a093a5f77fcf5089abc64fb1850530aa207cd650fed31f.png?c03929ac77bf69c99ff3ad27c471c652"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper" id="header">
+        <!-- Разметка переключателя тем -->
+        <div class="toolbar container">
+          <div class="theme-switch">
+            <div class="theme-switch__control">
+              <input
+                class="theme-switch__toggle"
+                type="checkbox"
+                name="theme"
+                id="theme-switch-toggle"
+                aria-label="Переключить между тёмной и светлой темой"
+              />
+              <label
+                aria-hidden="true"
+                class="theme-switch__track"
+                for="theme-switch-toggle"
+              >
+              </label>
+              <div aria-hidden="true" class="theme-switch__marker"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Разметка хедера  -->
+        <div class="container dws-form">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link logo" href="#" id="logo">
+                  <svg class="nav__icon--film">
+                    <use href="./images/symbol-defs.svg#film"></use>
+                  </svg>
+                  <span class="logo-text">Filmoteka</span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a
+                  class="nav__link active nav__link--current"
+                  href="#"
+                  id="homeBtn"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav__item">
+                <a class="nav__link nav-library hide" href="#" id="libraryBtn"
+                  >MY LIBRARY</a
+                >
+              </li>
+              <li class="nav__item">
+                <div class="auth-container">
+                  <button id="sign_in">SIGN IN</button>
+                  <button id="sign_out" class="hide">SIGN OUT</button>
+                  <div class="user-info"></div>
+                </div>
+              </li>
+            </ul>
+            <div id="formWrap">
+              <div class="input-container">
+                <div class="search-wrap">
+                  <form class="nav__form" id="search-form">
+                    <input
+                      name="query"
+                      class="nav__form-input js-input"
+                      type="text"
+                      placeholder="Поиск фильмов"
+                      autocomplete="off"
+                      id="name"
+                    />
+                    <label for="name" class="nav__form-label"
+                      >Поиск фильмов</label
+                    >
+                    <button class="nav__form-button--search" type="submit">
+                      <svg class="nav__icon--search">
+                        <use href="./images/symbol-defs.svg#search-2"></use>
+                      </svg>
+                    </button>
+                  </form>
+                  <ul class="search-list js-search-list is-hidden"></ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div id="containerBtnLibrary" class="hide">
+            <ul class="button-list">
+              <li class="button-item">
+                <button class="btn lib-btn-active btnWatched">WATCHED</button>
+              </li>
+              <li class="button-item">
+                <button class="btn lib-btn-off queue btnQueue">QUEUE</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="gallery">
+        <div class="container">
+          <div class="spinner hide"></div>
+          <div class="spinner-inversion hide"></div>
+          <ul class="js-gallery gallery__list grid"></ul>
+        </div>
+        <div id="pagination" class="tui-pagination"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__flex">
+        <p class="footer__copy">&copy; 2020 | All Rights Reserved |</p>
+        <p class="footer__developers">
+          <span>Developed with</span>
+          <svg class="footer__icon" alt="heart-icon">
+            <use
+              class="footer__love"
+              href="./images/symbol-defs.svg#Vector-love"
+            />
+          </svg>
+          <span
+            >by
+            <a href="#" class="footer__students githubs">GoIT Students</a></span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Students Modal -->
+    <div class="modal micromodal-slide" id="modal-footer" aria-hidden="true">
+      <div class="modal__overlay__footer" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container__footer modal__theme-footer"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+        >
+          <section class="modal__header__footer">
+            <h2 class="modal__title__footer" id="modal-footer-title">
+              <span class="orange">GoIT</span> Students
+            </h2>
+
+            <div class="button-wrapper">
+              <a
+                class="github__btn"
+                href="https://github.com/Olga-Konopleva/Filmoteka-Team6"
+                target="_blank"
+                >GitHub</a
+              >
+              <button
+                class="modal__btn__footer"
+                data-micromodal-close
+                aria-label="Close this dialog window"
+              >
+                Назад
+              </button>
+            </div>
+          </section>
+          <section class="modal__content__footer" id="modal-footer-content">
+            <div class="grid-container">
+              <a
+                href="https://github.com/Olga-Konopleva"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/68773434?s=400&u=c6110eff2fb2aac8e2eaaa6ee42d1568422bdf37&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Olga <br />
+                  Konopleva
+                </p>
+              </a>
+              <a
+                href="https://github.com/yurii-shendryk"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/67485903?s=400&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Yurii <br />
+                  Shendryk
+                </p>
+              </a>
+              <a
+                href="https://github.com/Mykhailo-Gogol"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/68640759?s=460&u=26ed30d9565ad91e45762691bb39dc50a9fd0058&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Mykhailo <br />
+                  Gogol
+                </p>
+              </a>
+              <a
+                href="https://github.com/AlexandraMarkova"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/68554518?s=400&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Alexandra <br />
+                  Markova
+                </p>
+              </a>
+              <a
+                href="https://github.com/gevko-vasyl"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/69365904?s=400&u=356ec9b45ca1950e2297def552e99c6eb7374f9b&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Gevko <br />
+                  Vasyl
+                </p>
+              </a>
+              <a
+                href="https://github.com/VityukY"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/67076356?s=400&u=89c8104f2926e6c91c669fad2a82553617e2aa99&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Vityuk <br />
+                  Yuriy
+                </p>
+              </a>
+
+              <a
+                href="https://github.com/olhaknysh"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/68243342?s=400&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Olha <br />
+                  Knysh
+                </p>
+              </a>
+              <a
+                href="https://github.com/AnastasiaB24"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/69219462?s=400&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Anastasia <br />
+                  B24
+                </p>
+              </a>
+              <a
+                href="https://github.com/js-full-stack"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/68064239?s=400&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  js <br />
+                  full-stack
+                </p>
+              </a>
+              <a
+                href="https://github.com/Millenium3000"
+                target="_blank"
+                class="grid-cell"
+              >
+                <img
+                  src="https://avatars.githubusercontent.com/u/66272852?s=400&u=04da8936e37762aef444c6251ab42f4601ec9afb&v=4"
+                  class="grid-cell-top"
+                />
+                <p class="grid-cell-name">
+                  Millenium <br />
+                  3000
+                </p>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Модальное окно фильма -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container container modal__theme-film"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-1-title"
+          aria-describedby="modal-1-content"
+        >
+          <!-- сюда рендериться разметка -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

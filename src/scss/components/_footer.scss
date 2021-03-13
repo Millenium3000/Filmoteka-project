@@ -1,0 +1,131 @@
+.footer {
+  // стилі для розмітки футер
+
+  // Десктоп
+  @include for-size(desktop) {
+    padding-top: 30px;
+    padding-bottom: 28px;
+    font-size: 16px;
+    line-height: 19px;
+
+    &__flex {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__developers {
+      display: flex;
+      align-items: center;
+      margin-left: 4px;
+    }
+
+    &__icon {
+      margin-left: 8px;
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      animation: pulse 1s ease infinite;
+    }
+
+    &__students,
+    &__students:visited {
+      text-decoration: underline;
+      color: inherit;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+  @include for-size(mobile-only) {
+    // Телефон
+    padding-top: 28.71px;
+    padding-bottom: 29.7px;
+    font-size: 14px;
+    line-height: 16px;
+
+    &__flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__developers {
+      display: flex;
+      align-items: center;
+      margin-top: 9.9px;
+    }
+
+    &__icon {
+      margin-left: 8px;
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      animation: pulse 1s ease infinite;
+    }
+
+    &__students,
+    &__students:visited {
+      text-decoration: underline;
+      color: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  @include for-size(tablet-only) {
+    // Планшет
+    padding-top: 28.71px;
+    padding-bottom: 29.7px;
+    font-size: 14px;
+    line-height: 16px;
+
+    &__flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__developers {
+      display: flex;
+      align-items: center;
+      margin-left: 4px;
+    }
+
+    &__icon {
+      margin-left: 8px;
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      animation: pulse 1s ease infinite;
+    }
+
+    &__students,
+    &__students:visited {
+      text-decoration: underline;
+      color: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
+
+// Анімація футер
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.orange {
+  color: $orange-primary;
+}

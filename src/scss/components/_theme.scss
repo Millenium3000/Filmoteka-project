@@ -1,0 +1,125 @@
+body.light-theme {
+  background-color: $white;
+  color: $black;
+}
+
+body.dark-theme {
+  background-color: $gray;
+  color: $white;
+}
+
+footer.light-theme {
+  background-color: $footerBg-and-arrowPagin;
+  color: #545454;
+}
+
+footer.dark-theme {
+  background-color: $footerBg-dark-theme;
+  color: $white;
+}
+
+.modal__theme-film.light-theme,
+.modal__theme-footer.light-theme {
+  background-color: $white;
+}
+
+.modal__theme-film.dark-theme,
+.modal__theme-footer.dark-theme {
+  background-color: $modal-dark-theme;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+
+  @include for-size(tablet) {
+    padding: 10px 16px;
+  }
+}
+
+/* THEME SWITCH */
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 54px;
+  height: 20px;
+  border: 2px solid $orange-secondary;
+  border-radius: 50em;
+  padding: 3px 0;
+  z-index: 0;
+
+  @include for-size(desktop) {
+    width: 56px;
+    height: 24px;
+  }
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: $gray;
+  border-radius: inherit;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: $white;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(1px);
+  transition: transform $transition;
+
+  @include for-size(desktop) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: $white;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(34px);
+  background: #545454;
+
+  @include for-size(desktop) {
+    transform: translateX(32px);
+  }
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 1px $gray;
+}

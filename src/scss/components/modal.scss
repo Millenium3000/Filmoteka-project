@@ -1,0 +1,341 @@
+.btn-trigger {
+  margin: 0 0 300px;
+}
+
+.modal {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  color: $black;
+z-index: 1000;
+}
+
+.modal__overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;;
+}
+
+.modal__container {
+  background-color: #fff;
+
+  @include for-size(mobile) {
+    margin-top: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 48px;
+    padding-bottom: 41px;
+    max-width: 280px;
+    // max-height: 958px;
+  }
+
+  @include for-size(tablet) {
+    margin-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 42px;
+    padding-bottom: 40px;
+    max-width: 618px;
+    max-height: 562px;
+  }
+
+  @include for-size(desktop) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    // padding-bottom: 102px;
+    max-width: 882px;
+    max-height: 568px;
+  }
+}
+
+.modal__document {
+  @include for-size(tablet) {
+    display: flex;
+  }
+}
+
+.modal__header {
+  @include for-size(mobile) {
+  min-width: 240px;
+}
+@include for-size(tablet) {
+  min-width: 264px;
+}
+@include for-size(desktop) {
+  min-width: 360px;
+}
+}
+
+.modal__img {
+//   @include for-size(mobile) {
+//       width: 240px;
+//       height: 356px;
+//       border-radius: 5px;
+//   }
+
+
+//  @include for-size(tablet) {
+//   width: 264px;
+//   height: 373px;
+//  }  
+
+
+ @include for-size(desktop) {
+ width: 360px;
+    height: 477px;
+ }
+}
+
+.modal__content {
+  @include for-size(tablet) {
+    margin-left: 32px;
+    width: 264px;
+  }
+  @include for-size(desktop) {
+    margin-left: 30px;
+    width: 396px;
+  }
+}
+
+.modal__title {
+  @include for-size(mobile) {
+    margin-top: 30px;
+
+    font-family: $font;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.17;
+    color: $black;
+  }
+
+  @include for-size(tablet) {
+    margin-top: 0;
+  }
+
+  @include for-size(desktop) {
+    font-size: 30px;
+  }
+}
+
+.modal__information {
+  display: flex;
+  margin-top: 20px;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.modal__information--text1 {
+  color: $gray-text-modal;
+
+  @include for-size(mobile) {
+    width: 108px;
+    padding-bottom: 10px;
+  }
+
+  @include for-size(desktop) {
+    width: 152px;
+  }
+}
+
+.modal__information--text2 {
+  @include for-size(tablet) {
+    margin-top: 20px;
+  }
+}
+
+.modal__information--list:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.modal__information--block {
+  border: 1px solid $orange-secondary;
+  background: $orange-secondary;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  color: $white;
+}
+
+.modal__title2 {
+  margin-top: 20px;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.modal__text {
+  margin-top: 20px;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: $black;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modal__button-container {
+  @include for-size(mobile) {
+    display: flex;
+  }
+}
+
+.modal__button1 {
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  background-color: transparent;
+  color: $black;
+  border: 1px solid $black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all $transition;
+
+  padding-left: 6px;
+  padding-right: 6px;
+
+  @include for-size(mobile) {
+    margin-top: 21px;
+    margin-right: 14px;
+    width: 112px;
+    height: 44px;
+  }
+
+  @include for-size(tablet) {
+    width: 125px;
+    margin-right: 15px;
+  }
+
+  @include for-size(desktop) {
+    width: 136px;
+  }
+}
+
+.modal__button1:focus,
+.modal__button1:hover
+ {
+  background-color: $orange-secondary;
+  color: $white;
+  transform: scale(1.05);
+  border: 1px solid $orange-secondary;
+}
+
+.modal__button2 {
+background-color: $orange-secondary;
+  color: $white;
+  border: 1px solid $orange-secondary;
+}
+.modal__button2:focus {
+  border: 1px solid $orange-secondary;
+}
+
+
+.modal__header .modal__close:before {
+  content: '\2715';
+}
+
+#back-to-top {
+  right: 15px;
+  bottom: 50px; 
+}
+
+// .modal__btn {
+//   font-size: .875rem;
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   padding-top: .5rem;
+//   padding-bottom: .5rem;
+//   background-color: #e6e6e6;
+//   color: rgba(0,0,0,.8);
+//   border-radius: .25rem;
+//   border-style: none;
+//   border-width: 0;
+//   cursor: pointer;
+//   -webkit-appearance: button;
+//   text-transform: none;
+//   overflow: visible;
+//   line-height: 1.15;
+//   margin: 0;
+//   will-change: transform;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+//   -webkit-transform: translateZ(0);
+//   transform: translateZ(0);
+//   transition: -webkit-transform .25s ease-out;
+//   transition: transform .25s ease-out;
+//   transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+// }
+
+// .modal__btn:focus, .modal__btn:hover {
+//   -webkit-transform: scale(1.05);
+//   transform: scale(1.05);
+// }
+
+// .modal__btn-primary {
+//   background-color: #00449e;
+//   color: #fff;
+// }
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mm-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mm-slideIn {
+  from {
+    transform: translateY(35%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.micromodal-slide[aria-hidden='false'] .modal__overlay {
+  animation: mm-fadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden='false'] .modal__container {
+  animation: mm-slideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+.modal[aria-hidden='true'] {
+  display: none;
+}
